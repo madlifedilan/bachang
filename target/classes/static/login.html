@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="login" method="post">
+        <input type="text" name="name" /><br>
+        <input type="text" name="password" /><br>
+        <input type="submit" value="登录" onclick="login"/>
+    </form>
+</body>
+<script src="jquery-1.11.2.js"></script>
+<script>
+    function login(){
+        //根据dom对象获取文本框的数据
+        var name = $("input[name='name']").val();
+        var password = $("input[name='password']").val()
+
+        $.ajax({
+            url:"login",
+            type:"post",
+            data:{"name":name,"password":password},
+            success:function(data){
+                $("div").text(data)
+            }
+        })
+    }
+</script>
+</html>
