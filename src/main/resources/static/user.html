@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>用户名</td>
+            <td>密码</td>
+            <td>操作</td>
+        </tr>
+    </table>
+    <button onclick="test()">添加测试数据</button>
+</body>
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $.ajax({
+        url:"getAllUsers",
+        type:"get",
+        success:function(data){
+            var trStr = "";
+            for(var i=0;i<data.length;i++){
+                //每次循环对应一行tr
+                //给每一行加上id方便查找
+                trStr += "<tr data-id='" + data[i].id + "'>";
+                trStr += "<td>"+data[i].name+"</td>";
+                trStr += "<td>"+data[i].password+"</td>";
+                trStr += "<td><button onclick='del(" + data[i].id + ")'>删除</button></td>";
+                trStr += "</tr>"
+            }
+            //trStr  很多行的代码
+            $("table").append(trStr);
+
+        }
+    })
+
+    function del(id){
+        $.ajax({
+            url:"delUser",
+            type:"get",
+            data:{"userId":id},
+            success:function(data){
+                //使用id查找对应行删除
+                $("tr[data-id='"+id+"']").remove();
+            }
+        })
+    }
+
+    function test(){
+        for(var i = 0,j = 0;i<10;i++,j++){
+            $.ajax({
+                url:"insertUser",
+                type:"get",
+                data:{"name":i,"password":j},
+                success:function (){}
+            })
+        }
+        location.reload();
+    }
+</script>
+
+</html>
