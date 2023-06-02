@@ -393,7 +393,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-6 CSRF-item">
-                    <a href="#CSRFModal1" class="CSRF-link" data-toggle="modal">
+                    <a href="#CSRF1" class="CSRF-link" data-toggle="modal">
                         <div class="CSRF-hover">
                             <div class="CSRF-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -848,6 +848,35 @@
         </div>
     </div>
 
+<!--    CSRF1-->
+    <div class="portfolio-modal modal fade" id="CSRF1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1>Java漏洞演示平台</h1>
+                            <input id="CSRFuserid" type="text" placeholder="请输入userid"><br><br>
+                            <input id="CSRFname" type="text" placeholder="请输入用户名"><br><br>
+                            <input id="CSRFpassword" type="password" placeholder="请输入密码"><br><br>
+                            <button id="CSRFstart" type="button" class="btn btn-primary">注册</button>
+                            <br>
+                            <br>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- XSS1 -->
     <div class="portfolio-modal modal fade" id="XSS1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
@@ -916,6 +945,38 @@
         });
     </script>
 
+<!--    CSRF1 Script-->
+    <script>
+        $("#CSRFstart").click(function () {
+                var user= {
+                    "userid" : $("#CSRFuserid").val(),
+                    "name" : $("#CSRFname").val(),
+                    "password" : $("#CSRFpassword").val()
+                };
+                $.ajax({
+                    type : "POST",
+                    url: "/csrf",
+                    async : true,
+                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                    data : user,
+                    success : function(){
+                        alert('注册成功');
+                        window.location.reload();
+                    },
+                    error : function(){
+                        alert('注册失败');
+                        var inputUserid = document.getElementById('CSRFuserid');
+                        var inputName = document.getElementById('CSRFname');
+                        var inputPassword = document.getElementById('CSRFpassword');
+                        inputUserid.value = '';
+                        inputName.value = '';
+                        inputPassword.value = '';
+                    },
+                })
+            }
+        );
+
+</script>
 </body>
 
 </html>
