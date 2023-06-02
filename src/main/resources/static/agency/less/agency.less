@@ -244,18 +244,91 @@ section {
 	text-transform: none;
 }
 
-// Portfolio Section
+// SQL Section
 
-#portfolio {
-    .portfolio-item {
+#SQL {
+	.SQL-item {
+		margin: 0 0 15px;
+		right: 0;
+		.SQL-link {
+			display: block;
+			position: relative;
+			max-width: 400px;
+			margin: 0 auto;
+			.SQL-hover {
+				background: fade(@brand-primary, 90%);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: all ease 0.5s;
+				-webkit-transition: all ease 0.5s;
+				-moz-transition: all ease 0.5s;
+				&:hover {
+					opacity: 1;
+				}
+				.SQL-hover-content {
+					position: absolute;
+					width: 100%;
+					height: 20px;
+					font-size: 20px;
+					text-align: center;
+					top: 50%;
+					margin-top: -12px;
+					color: white;
+					i {
+						margin-top: -12px;
+					}
+					h3,
+					h4 {
+						margin: 0;
+					}
+				}
+			}
+		}
+		.SQL-caption {
+			max-width: 400px;
+			margin: 0 auto;
+			background-color: white;
+			text-align: center;
+			padding: 25px;
+			h4 {
+				text-transform: none;
+				margin: 0;
+			}
+			p {
+				.serif-font;
+				font-style: italic;
+				font-size: 16px;
+				margin: 0;
+			}
+		}
+	}
+	* {
+		z-index: 2;
+	}
+}
+
+@media(min-width:767px) {
+	#SQL {
+		.SQL-item {
+			margin: 0 0 30px;
+		}
+	}
+}
+
+// XSS Section
+
+#XSS {
+    .XSS-item {
         margin: 0 0 15px;
         right: 0;
-        .portfolio-link {
+        .XSS-link {
             display: block;
             position: relative;
             max-width: 400px;
             margin: 0 auto;
-            .portfolio-hover {
+            .XSS-hover {
                 background: fade(@brand-primary, 90%);
                 position: absolute;
                 width: 100%;
@@ -267,7 +340,7 @@ section {
                 &:hover {
                     opacity: 1;
                 }
-                .portfolio-hover-content {
+                .XSS-hover-content {
                     position: absolute;
                     width: 100%;
                     height: 20px;
@@ -286,7 +359,7 @@ section {
                 }                
             }            
         }
-        .portfolio-caption {
+        .XSS-caption {
         	max-width: 400px;
         	margin: 0 auto;
         	background-color: white;
@@ -310,11 +383,305 @@ section {
 }
 
 @media(min-width:767px) {
-    #portfolio {
-        .portfolio-item {
-            margin: 0 0 30px;
-        }
-    }
+	#XSS {
+		.XSS-item {
+			margin: 0 0 30px;
+		}
+	}
+}
+
+// RCE Section
+
+#RCE {
+	.RCE-item {
+		margin: 0 0 15px;
+		right: 0;
+		.RCE-link {
+			display: block;
+			position: relative;
+			max-width: 400px;
+			margin: 0 auto;
+			.RCE-hover {
+				background: fade(@brand-primary, 90%);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: all ease 0.5s;
+				-webkit-transition: all ease 0.5s;
+				-moz-transition: all ease 0.5s;
+				&:hover {
+					opacity: 1;
+				}
+				.RCE-hover-content {
+					position: absolute;
+					width: 100%;
+					height: 20px;
+					font-size: 20px;
+					text-align: center;
+					top: 50%;
+					margin-top: -12px;
+					color: white;
+					i {
+						margin-top: -12px;
+					}
+					h3,
+					h4 {
+						margin: 0;
+					}
+				}
+			}
+		}
+		.RCE-caption {
+			max-width: 400px;
+			margin: 0 auto;
+			background-color: white;
+			text-align: center;
+			padding: 25px;
+			h4 {
+				text-transform: none;
+				margin: 0;
+			}
+			p {
+				.serif-font;
+				font-style: italic;
+				font-size: 16px;
+				margin: 0;
+			}
+		}
+	}
+	* {
+		z-index: 2;
+	}
+}
+
+@media(min-width:767px) {
+	#RCE {
+		.RCE-item {
+			margin: 0 0 30px;
+		}
+	}
+}
+
+// CSRF Section
+
+#CSRF {
+	.CSRF-item {
+		margin: 0 0 15px;
+		right: 0;
+		.CSRF-link {
+			display: block;
+			position: relative;
+			max-width: 400px;
+			margin: 0 auto;
+			.CSRF-hover {
+				background: fade(@brand-primary, 90%);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: all ease 0.5s;
+				-webkit-transition: all ease 0.5s;
+				-moz-transition: all ease 0.5s;
+				&:hover {
+					opacity: 1;
+				}
+				.CSRF-hover-content {
+					position: absolute;
+					width: 100%;
+					height: 20px;
+					font-size: 20px;
+					text-align: center;
+					top: 50%;
+					margin-top: -12px;
+					color: white;
+					i {
+						margin-top: -12px;
+					}
+					h3,
+					h4 {
+						margin: 0;
+					}
+				}
+			}
+		}
+		.CSRF-caption {
+			max-width: 400px;
+			margin: 0 auto;
+			background-color: white;
+			text-align: center;
+			padding: 25px;
+			h4 {
+				text-transform: none;
+				margin: 0;
+			}
+			p {
+				.serif-font;
+				font-style: italic;
+				font-size: 16px;
+				margin: 0;
+			}
+		}
+	}
+	* {
+		z-index: 2;
+	}
+}
+
+@media(min-width:767px) {
+	#CSRF {
+		.CSRF-item {
+			margin: 0 0 30px;
+		}
+	}
+}
+
+// SSRF Section
+
+#SSRF {
+	.SSRF-item {
+		margin: 0 0 15px;
+		right: 0;
+		.SSRF-link {
+			display: block;
+			position: relative;
+			max-width: 400px;
+			margin: 0 auto;
+			.SSRF-hover {
+				background: fade(@brand-primary, 90%);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: all ease 0.5s;
+				-webkit-transition: all ease 0.5s;
+				-moz-transition: all ease 0.5s;
+				&:hover {
+					opacity: 1;
+				}
+				.SSRF-hover-content {
+					position: absolute;
+					width: 100%;
+					height: 20px;
+					font-size: 20px;
+					text-align: center;
+					top: 50%;
+					margin-top: -12px;
+					color: white;
+					i {
+						margin-top: -12px;
+					}
+					h3,
+					h4 {
+						margin: 0;
+					}
+				}
+			}
+		}
+		.SSRF-caption {
+			max-width: 400px;
+			margin: 0 auto;
+			background-color: white;
+			text-align: center;
+			padding: 25px;
+			h4 {
+				text-transform: none;
+				margin: 0;
+			}
+			p {
+				.serif-font;
+				font-style: italic;
+				font-size: 16px;
+				margin: 0;
+			}
+		}
+	}
+	* {
+		z-index: 2;
+	}
+}
+
+@media(min-width:767px) {
+	#SSRF {
+		.SSRF-item {
+			margin: 0 0 30px;
+		}
+	}
+}
+
+
+
+// portfolio Section
+
+#portfolio {
+	.portfolio-item {
+		margin: 0 0 15px;
+		right: 0;
+		.portfolio-link {
+			display: block;
+			position: relative;
+			max-width: 400px;
+			margin: 0 auto;
+			.portfolio-hover {
+				background: fade(@brand-primary, 90%);
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: all ease 0.5s;
+				-webkit-transition: all ease 0.5s;
+				-moz-transition: all ease 0.5s;
+				&:hover {
+					opacity: 1;
+				}
+				.portfolio-hover-content {
+					position: absolute;
+					width: 100%;
+					height: 20px;
+					font-size: 20px;
+					text-align: center;
+					top: 50%;
+					margin-top: -12px;
+					color: white;
+					i {
+						margin-top: -12px;
+					}
+					h3,
+					h4 {
+						margin: 0;
+					}
+				}
+			}
+		}
+		.portfolio-caption {
+			max-width: 400px;
+			margin: 0 auto;
+			background-color: white;
+			text-align: center;
+			padding: 25px;
+			h4 {
+				text-transform: none;
+				margin: 0;
+			}
+			p {
+				.serif-font;
+				font-style: italic;
+				font-size: 16px;
+				margin: 0;
+			}
+		}
+	}
+	* {
+		z-index: 2;
+	}
+}
+
+@media(min-width:767px) {
+	#portfolio {
+		.portfolio-item {
+			margin: 0 0 30px;
+		}
+	}
 }
 
 // Timeline
