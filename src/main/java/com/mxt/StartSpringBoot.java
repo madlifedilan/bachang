@@ -1,4 +1,4 @@
-package com.zlt;
+package com.mxt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

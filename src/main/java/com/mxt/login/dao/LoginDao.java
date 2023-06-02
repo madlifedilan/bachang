@@ -1,6 +1,6 @@
-package com.zlt.dao;
+package com.mxt.login.dao;
 
-import com.zlt.entity.User;
+import com.mxt.login.entity.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

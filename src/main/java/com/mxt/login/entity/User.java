@@ -1,4 +1,4 @@
-package com.zlt.entity;
+package com.mxt.login.entity;
 
 /**
  * 数据库中有一张表是User表

@@ -1,7 +1,7 @@
-package com.zlt.service;
+package com.mxt.login.service;
 
-import com.zlt.dao.LoginDao;
-import com.zlt.entity.User;
+import com.mxt.login.dao.LoginDao;
+import com.mxt.login.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.zlt.controller;
+package com.mxt.login.controller;
 
-import com.zlt.entity.User;
-import com.zlt.service.LoginService;
+import com.mxt.login.entity.User;
+import com.mxt.login.service.LoginService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
