@@ -24,9 +24,12 @@ spring:
       minEvictableIdleTimeMillis: 300000
 
 # 定位模板的目录
-
   mvc:
     view:
      prefix: classpath:/templates/
   # 给返回的页面添加后缀名
      suffix: .html
+
+  web:
+    resources:
+      static-locations: classpath:/templates/

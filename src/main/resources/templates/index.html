@@ -861,7 +861,14 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            HELLO
+                            <h2>XSS 1</h2>
+                            <p class="item-intro text-muted">提示：alert(/xss/)</p>
+                            <label for="inputXSS1">请输入内容</label><input id="inputXSS1" type="text" placeholder="输入数据">
+                            <button id="XSS1SubmitButton" type="button">提交</button>
+                            <div id="outputXSS1"></div>
+                            <br>
+                            <br>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
                         </div>
                     </div>
                 </div>
@@ -882,10 +889,32 @@
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+
+    <!--监听输入框-->
+    <script>
+        $(document).ready(function() {
+            // 监听输入框变化事件
+            $('#XSS1SubmitButton').on('click', function () {
+                var inputData = $('#inputXSS1').val(); // 获取输入框的值
+
+                // 发送异步请求到后端
+                $.ajax({
+                    type: 'POST',
+                    url: '/xssoutput',
+                    data: {"name": inputData},
+                    success: function (response) {
+                        // 更新页面上的元素
+                        $('#outputXSS1').text(response);
+                        eval(response);
+                    }
+                });
+
+            });
+        });
+    </script>
 
 </body>
 
