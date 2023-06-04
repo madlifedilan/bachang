@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UsernameMapper {
 
-    @Insert("insert into user (userid, name, password) VALUES (#{user.userid}, #{user.name}, #{user.password})")
+    @Insert("insert into csrfuser (userid, name, password) VALUES (#{user.userid}, #{user.name}, #{user.password})")
     public void addUser(@Param("user") User user);
 }
