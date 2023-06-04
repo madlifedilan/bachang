@@ -261,11 +261,13 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
+
+
 header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/背景.jpg);
+    background-image: url(../img/背景.gif);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
