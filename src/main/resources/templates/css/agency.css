@@ -749,19 +749,19 @@ section h3.section-subheading {
 
 /*----------------SSRF----------------*/
 
-#SSRF .SSRF-item {
+#upload .upload-item {
     right: 0;
     margin: 0 0 15px;
 }
 
-#SSRF .SSRF-item .SSRF-link {
+#upload .upload-item .upload-link {
     display: block;
     position: relative;
     margin: 0 auto;
     max-width: 400px;
 }
 
-#SSRF .SSRF-item .SSRF-link .SSRF-hover {
+#upload .upload-item .upload-link .upload-hover {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -772,11 +772,11 @@ section h3.section-subheading {
     transition: all ease .5s;
 }
 
-#SSRF .SSRF-item .SSRF-link .SSRF-hover:hover {
+#upload .upload-item .upload-link .upload-hover:hover {
     opacity: 1;
 }
 
-#SSRF .SSRF-item .SSRF-link .SSRF-hover .SSRF-hover-content {
+#upload .upload-item .upload-link .upload-hover .upload-hover-content {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -787,16 +787,16 @@ section h3.section-subheading {
     color: #fff;
 }
 
-#SSRF .SSRF-item .SSRF-link .SSRF-hover .SSRF-hover-content i {
+#upload .upload-item .upload-link .upload-hover .upload-hover-content i {
     margin-top: -12px;
 }
 
-#SSRF .SSRF-item .SSRF-link .SSRF-hover .SSRF-hover-content h3,
-#SSRF .SSRF-item .SSRF-link .SSRF-hover .SSRF-hover-content h4 {
+#upload .upload-item .upload-link .upload-hover .upload-hover-content h3,
+#upload .upload-item .upload-link .upload-hover .upload-hover-content h4 {
     margin: 0;
 }
 
-#SSRF .SSRF-item .SSRF-caption {
+#upload .upload-item .upload-caption {
     margin: 0 auto;
     padding: 25px;
     max-width: 400px;
@@ -804,22 +804,42 @@ section h3.section-subheading {
     background-color: #fff;
 }
 
-#SSRF .SSRF-item .SSRF-caption h4 {
+#upload .upload-item .upload-caption h4 {
     margin: 0;
     text-transform: none;
 }
 
-#SSRF .SSRF-item .SSRF-caption p {
+#upload .upload-item .upload-caption p {
     margin: 0;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: italic;
 }
 
-#SSRF * {
+#upload * {
     z-index: 2;
 }
 
+.modal-newweb{
+    text-align: center; /*让div内部文字居中*/
+    background-color: #fff;
+    border-radius: 10px;
+    width: 500px;
+    height: 350px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.inputupload{
+    display: block;
+    margin: 5px 5px 5px 200px;
+}
+.table{
+    margin-left: auto
+}
 @media(min-width:767px) {
     #SSRF .SSRF-item {
         margin: 0 0 30px;

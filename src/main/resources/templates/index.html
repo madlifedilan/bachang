@@ -70,7 +70,7 @@
                     <a class="page-scroll" href="#CSRF">CSRF</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#SSRF">SSRF</a>
+                    <a class="page-scroll" href="#upload">UPLOAD</a>
                 </li>
             </ul>
         </div>
@@ -426,103 +426,107 @@
         </div>
     </section>
 
-    <!-- SSRF Section -->
-    <section id="SSRF" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">SSRF</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+<!-- UPLOAD Section -->
+<section id="upload" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">文件上传漏洞</h2>
+                <h3 class="section-subheading text-muted">
+                    文件上传漏洞是指用户上传了一个可执行的脚本文件，并通过此脚本文件获得了执行服务器端命令的能力。</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 upload-item">
+                <a href="#uploadModal1" class="upload-link" data-toggle="modal">
+                    <div class="upload-hover">
+                        <div class="upload-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                </a>
+                <div class="upload-caption">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 SSRF-item">
-                    <a href="#SSRFModal1" class="SSRF-link" data-toggle="modal">
-                        <div class="SSRF-hover">
-                            <div class="SSRF-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+
+            <div class="col-md-4 col-sm-6 upload-item">
+                <a href="#uploadModal2" class="upload-link" data-toggle="modal">
+                    <div class="upload-hover">
+                        <div class="upload-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="img/SSRF/roundicons.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="SSRF-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
                     </div>
+                    <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                </a>
+                <div class="upload-caption">
+                    <h4>Startup Framework</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
-                <div class="col-md-4 col-sm-6 SSRF-item">
-                    <a href="#SSRFModal2" class="SSRF-link" data-toggle="modal">
-                        <div class="SSRF-hover">
-                            <div class="SSRF-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 upload-item">
+                <a href="#uploadModal3" class="upload-link" data-toggle="modal">
+                    <div class="upload-hover">
+                        <div class="upload-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="img/SSRF/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="SSRF-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
                     </div>
+                    <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                </a>
+                <div class="upload-caption">
+                    <h4>Treehouse</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
-                <div class="col-md-4 col-sm-6 SSRF-item">
-                    <a href="#SSRFModal3" class="SSRF-link" data-toggle="modal">
-                        <div class="SSRF-hover">
-                            <div class="SSRF-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 upload-item">
+                <a href="#uploadModall4" class="upload-link" data-toggle="modal">
+                    <div class="upload-hover">
+                        <div class="upload-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="img/SSRF/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="SSRF-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
                     </div>
+                    <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                </a>
+                <div class="upload-caption">
+                    <h4>Golden</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
-                <div class="col-md-4 col-sm-6 SSRF-item">
-                    <a href="#SSRFModal4" class="SSRF-link" data-toggle="modal">
-                        <div class="SSRF-hover">
-                            <div class="SSRF-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 upload-item">
+                <a href="#uploadModal5" class="upload-link" data-toggle="modal">
+                    <div class="upload-hover">
+                        <div class="upload-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="img/SSRF/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="SSRF-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
                     </div>
+                    <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                </a>
+                <div class="upload-caption">
+                    <h4>Escape</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
-                <div class="col-md-4 col-sm-6 SSRF-item">
-                    <a href="#SSRFModal5" class="SSRF-link" data-toggle="modal">
-                        <div class="SSRF-hover">
-                            <div class="SSRF-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 upload-item">
+                <a href="#uploadModal6" class="upload-link" data-toggle="modal">
+                    <div class="upload-hover">
+                        <div class="upload-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="img/SSRF/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="SSRF-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 SSRF-item">
-                    <a href="#SSRFModal6" class="SSRF-link" data-toggle="modal">
-                        <div class="SSRF-hover">
-                            <div class="SSRF-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/SSRF/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="SSRF-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
+                    <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                </a>
+                <div class="upload-caption">
+                    <h4>Dreams</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Clients Aside -->
     <aside class="clients">
@@ -1063,6 +1067,107 @@
     </div>
 </div>
 
+
+<!-- upload-->
+<!--    upload1-->
+<div class="portfolio-modal modal fade" id="uploadModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-newweb">
+        <h2>Upload 1</h2>
+        <p class="item-intro text-muted">提示：</p>
+        <p class="item-intro text-muted">随便尝试一下上传吧</p>
+        <input class="inputupload" type="file" id="upload1" name="upload1">
+        <br>
+        <input type="submit" onclick="uploadsubmit1()">
+        <br>
+        <div id="resultupload1"></div>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
+    </div>
+</div>
+<!--    upload2-->
+<div class="portfolio-modal modal fade" id="uploadModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-newweb">
+        <h2>Upload 2</h2>
+        <p class="item-intro text-muted">提示：</p>
+        <p class="item-intro text-muted">随便尝试一下上传吧</p>
+        <input class="inputupload" type="file" id="upload2" name="upload2">
+        <br>
+        <input type="submit" onclick="uploadsubmit2()">
+        <br>
+        <div id="resultupload2"></div>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
+    </div>
+</div>
+<!--    upload3-->
+<div class="portfolio-modal modal fade" id="uploadModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-newweb">
+        <h2>Upload 3</h2>
+        <p class="item-intro text-muted">提示：</p>
+        <p class="item-intro text-muted">随便尝试一下上传吧</p>
+        <input class="inputupload" type="file" id="upload3" name="upload3">
+        <br>
+        <input type="submit" onclick="uploadsubmit3()">
+        <br>
+        <div id="resultupload3"></div>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
+    </div>
+</div>
+<!--    upload4-->
+<div class="portfolio-modal modal fade" id="uploadModal4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-newweb">
+        <h2>Upload 4</h2>
+        <p class="item-intro text-muted">提示：</p>
+        <p class="item-intro text-muted">随便尝试一下上传吧</p>
+        <input class="inputupload" type="file" id="upload4" name="upload4">
+        <br>
+        <input type="submit" onclick="uploadsubmit4()">
+        <br>
+        <div id="resultupload4"></div>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
+    </div>
+</div>
+<!--    upload5-->
+<div class="portfolio-modal modal fade" id="uploadModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-newweb">
+        <h2>SSRF 1</h2>
+        <p class="item-intro text-muted">提示：</p>
+        <p class="item-intro text-muted">http://www.baidu.com</p>
+        <p class="item-intro text-muted">file:///etc/passwd</p>
+        <input class="inputupload" type="text" id="SSRFinput5" placeholder="输入数据" name="SSRFinput5" >
+        <input type="submit" onclick="SSRF5submit()">
+        <br>
+        <br>
+        <div id="resultSSRF5">nihao</div>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
+    </div>
+</div>
+<!--    upload6-->
+<div class="portfolio-modal modal fade" id="uploadModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-newweb">
+        <h2>SSRF 1</h2>
+        <p class="item-intro text-muted">提示：</p>
+        <p class="item-intro text-muted">http://www.baidu.com</p>
+        <p class="item-intro text-muted">file:///etc/passwd</p>
+        <input class="inputupload" type="text" id="SSRFinput6" placeholder="输入数据" name="SSRFinput6" >
+        <input type="submit" onclick="SSRF6submit()">
+        <br>
+        <br>
+        <div id="resultSSRF6">nihao</div>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
+    </div>
+</div>
+
 <!-- jQuery Version 1.11.0 -->
 <script src="js/jquery-1.11.0.js"></script>
 
@@ -1517,7 +1622,125 @@
             })
         }
     </script>
+<!--upload1-->
+<script>
+    function uploadsubmit1() {
+        var fileData = $('#upload1').prop('files')[0];
+        var formData = new FormData();
+        formData.append('file', fileData);
+        $.ajax({
+            url: '/upload1',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function(data) {
+                $('#resultupload1').text('文件上传成功');
+            },
+            error: function(xhr, status, error) {
+                $('#resultupload1').text('文件上传失败');
+            }
+        });
+    }
+</script>
+<!--upload2-->
+<script>
+    function uploadsubmit2() {
+        var fileData = $('#upload2').prop('files')[0];
 
+        // 检查上传的文件类型
+        if (fileData.type !== 'image/jpeg' && fileData.type !== 'image/png') {
+            $('#resultupload2').text('只允许上传 JPG 和 PNG 格式的文件！');
+            return ;
+        }
+        // 创建一个 FormData 对象
+        var formData = new FormData();
+        formData.append('file', fileData);
+        $.ajax({
+            url: '/upload1',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function(data) {
+                if (data.status === 'success') {
+                    $('#resultupload2').text('文件上传成功！');
+                }
+            },
+            error: function(xhr, status, error) {
+                $('#resultupload2').text('文件上传失败：' + error);
+            }
+        });
+    }
+</script>
+<!--upload3-->
+<script>
+    function uploadsubmit3() {
+        var fileData = $('#upload3').prop('files')[0];
+
+        var allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.txt', '.pdf', '.doc', '.docx'];
+        // 检查上传的文件类型
+        var fileExtension = fileData.name.split('.').pop();
+        if (!allowedExtensions.includes('.' + fileExtension)) {
+            $('#resultupload3').text('不允许上传 ".jsp", ".php", ".exe", ".dll", ".vxd", ".html" 结尾的文件！');
+            return;
+        }
+        var formData = new FormData();
+        formData.append('file', fileData);
+        // 发送 Ajax 请求
+        $.ajax({
+            url: '/upload1',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function(data) {
+                if (data.status === 'success') {
+                    $('#resultupload3').text('文件上传成功！');
+                }
+            },
+            error: function(xhr, status, error) {
+                $('#resultupload3').text('文件上传失败：' + error);
+            }
+        });
+    }
+</script>
+<!--upload4-->
+<script>
+    function uploadsubmit4() {
+        var fileData = $('#upload4').prop('files')[0];
+
+        var allowedExtensions = ['.jsp', '.php', '.exe', '.dll', '.vxd', '.html'];
+        // 检查上传的文件类型
+        var fileExtension = fileData.name.split('.').pop().toLowerCase();
+        if (!allowedExtensions.includes('.' + fileExtension)) {
+            $('#resultupload4').text('不允许上传 ".jsp", ".php", ".exe", ".dll", ".vxd", ".html" 结尾的文件！');
+            return;
+        }
+        var formData = new FormData();
+        formData.append('file', fileData);
+        // 发送 Ajax 请求
+        $.ajax({
+            url: '/upload1',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function(data) {
+                if (data.status === 'success') {
+                    $('#resultupload4').text('文件上传成功！');
+                }
+            },
+            error: function(xhr, status, error) {
+                $('#resultupload4').text('文件上传失败：' + error);
+            }
+        });
+    }
+</script>
 </body>
 
 </html>
