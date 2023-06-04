@@ -26,4 +26,10 @@ public class XssController {
         return xss;
     }
 
+    @PostMapping("/xss3")
+    @ResponseBody
+    public String xss3(String xss){
+        return xss;
+    }
+
 }

@@ -213,7 +213,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 XSS-item">
-                    <a href="#portfolioModal3" class="XSS-link" data-toggle="modal">
+                    <a href="#XSS3" class="XSS-link" data-toggle="modal">
                         <div class="XSS-hover">
                             <div class="XSS-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -227,7 +227,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 XSS-item">
-                    <a href="#XSSModal4" class="XSS-link" data-toggle="modal">
+                    <a href="#XSS4" class="XSS-link" data-toggle="modal">
                         <div class="XSS-hover">
                             <div class="XSS-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -241,7 +241,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 XSS-item">
-                    <a href="#XSSModal5" class="XSS-link" data-toggle="modal">
+                    <a href="#XSS5" class="XSS-link" data-toggle="modal">
                         <div class="XSS-hover">
                             <div class="XSS-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -255,7 +255,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 XSS-item">
-                    <a href="#XSSModal6" class="XSS-link" data-toggle="modal">
+                    <a href="#XSS6" class="XSS-link" data-toggle="modal">
                         <div class="XSS-hover">
                             <div class="XSS-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -951,6 +951,36 @@
     </div>
 </div>
 
+<!-- XSS2 -->
+<div class="XSS-modal modal fade" id="XSS3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>XSS 3</h2>
+                        <p class="item-intro text-muted">提示：简单的js脚本嵌入</p>
+                        <label for="inputXSS3">请输入内容</label><input id="inputXSS3" type="text"
+                                                                        placeholder="输入数据">
+                        <button id="XSS3SubmitButton" type="button">提交</button>
+                        <div id="outputXSS3"></div>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- RCE Modal 1 -->
 <div class="RCE-modal modal fade" id="RCEModal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
@@ -1113,6 +1143,29 @@
                 success: function (response) {
                     // 更新页面上的元素
                     $('#outputXSS2').text(response);
+                    eval(response);
+                }
+            });
+
+        });
+    });
+</script>
+
+<!--XSS3 script-->
+<script>
+    $(document).ready(function() {
+        // 监听输入框变化事件
+        $('#XSS3SubmitButton').on('click', function () {
+            var inputData = $('#inputXSS3').val(); // 获取输入框的值
+
+            // 发送异步请求到后端
+            $.ajax({
+                type: 'POST',
+                url: '/xss3',
+                data: {"xss": inputData},
+                success: function (response) {
+                    // 更新页面上的元素
+                    $('#inputXSS3').html(response);
                 }
             });
 
