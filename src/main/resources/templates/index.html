@@ -1035,17 +1035,18 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="modal-body">
                         <!-- Project Details Go Here -->
-                        <h2>RCE_3 漏洞演示</h2>
+                        <h2>fastjson 漏洞演示</h2>
                         <p class="item-intro text-muted">提示</p>
                         <p class="item-intro text-muted">localhost:8080/rce.js </p>
                         <p class="item-intro text-muted">whoami</p>
-                        <input type="text" name="command2" placeholder="请输入url访问">
-                        <input type="submit" value="提交" onclick="jscmd()"/>
+                        <input id="fastjsonusername" type="text" placeholder="请输入用户名">
+                        <input id="fastjsonage" type="text" placeholder="请输入年龄">
+                        <input type="submit" value="提交" onclick="fastjson()"/>
 
                         <p></p>
                         <p></p>
                         <p></p>
-                        <div id="RCEresult3"></div>
+                        <div id="fastjsonresult"></div>
 
                         <ul class="list-inline">
                             <li>Date: June 2023</li>
@@ -1239,22 +1240,31 @@
         })
     }
 </script>
-<!-- RCE 的第三个靶场提交 -->
+<!-- fastjson 靶场 -->
 <script>
-    function jscmd() {
-        //根据dom对象获取文本框的数据
-        var command = $("input[name='command3']").val();
+    function fastjson() {
+            var user= {
+                "username" : $("#fastjsonusername").val(),
+                "age" : $("#fastjsonage").val()
+            };
+            $.ajax({
+                url: "/fastjson",
+                type : "POST",
+                async : true,
+                contentType: "application/json; charset=utf-8",
+                data : JSON.stringify(user),
+                // dataType : 'json',
+                success : function(data){
+                    alert('成功');
+                    $("#fastjsonresult").text(data);
+                },
+                error : function(data){
+                    alert('错误');
+                    $("#fastjsonresult").text(data);
+                },
+            })
+        }
 
-        $.ajax({
-            url: "/jscmd",
-            type: "post",
-            data: {"command": command},
-            success: function (data) {
-                $("#RCEresult3").text(data);
-
-            }
-        })
-    }
 </script>
 
 
