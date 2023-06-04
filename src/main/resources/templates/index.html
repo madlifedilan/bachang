@@ -99,7 +99,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-6 SQL-item">
-                    <a href="#portfolioModal1" class="SQL-link" data-toggle="modal">
+                    <a href="#SQLModal0" class="SQL-link" data-toggle="modal">
                         <div class="SQL-hover">
                             <div class="SQL-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 SQL-item">
-                    <a href="#SQLModal2" class="SQL-link" data-toggle="modal">
+                    <a href="#SQLModal1" class="SQL-link" data-toggle="modal">
                         <div class="SQL-hover">
                             <div class="SQL-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 SQL-item">
-                    <a href="#SQLModal3" class="SQL-link" data-toggle="modal">
+                    <a href="#SQLModal2" class="SQL-link" data-toggle="modal">
                         <div class="SQL-hover">
                             <div class="SQL-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 SQL-item">
-                    <a href="#SQLModal4" class="SQL-link" data-toggle="modal">
+                    <a href="#SQLModal3" class="SQL-link" data-toggle="modal">
                         <div class="SQL-hover">
                             <div class="SQL-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -155,7 +155,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 SQL-item">
-                    <a href="#SQLModal5" class="SQL-link" data-toggle="modal">
+                    <a href="#SQLModal4" class="SQL-link" data-toggle="modal">
                         <div class="SQL-hover">
                             <div class="SQL-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 SQL-item">
-                    <a href="#SQLModal6" class="SQL-link" data-toggle="modal">
+                    <a href="#SQLModal5" class="SQL-link" data-toggle="modal">
                         <div class="SQL-hover">
                             <div class="SQL-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -977,6 +977,252 @@
         );
 
 </script>
+
+    <!-- SQL Modal 0 -->
+    <div class="SQL-modal modal fade" id="SQLModal0" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>SQL0 漏洞演示</h2>
+                            <p class="item-intro text-muted">payload</p>
+                            <p class="item-intro text-muted">1' 1"</p>
+                            <p class="item-intro text-muted">查成绩</p>
+                            <form>
+                                <input type="text" name="username0" placeholder="请输入username"/><br>
+                                <input type="text" name="password0" placeholder="请输入password"/><br>
+                                <input type="submit" value="提交" onclick="sql0()"/><br>
+                            </form>
+                            <div id="result0"></div>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sql0(){
+            //根据dom对象获取文本框的数据
+            var username = $("input[name='username0']").val();
+            var password = $("input[name='password0']").val()
+
+            $.ajax({
+                url:"/sql0",
+                type:"post",
+                data:{"username":username,"password":password},
+                success:function(data){
+                    $("#result0").text(data)
+                }
+            })
+        }
+    </script>
+
+    <!-- SQL Modal 1 -->
+    <div class="SQL-modal modal fade" id="SQLModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>SQL1 漏洞演示</h2>
+                            <p class="item-intro text-muted">payload</p>
+                            <p class="item-intro text-muted">-1' union select 1,database(),3,4-- </p>
+                            <p class="item-intro text-muted">查成绩</p>
+                            <form>
+                                <input type="text" name="username1" placeholder="请输入username"/><br>
+                                <input type="text" name="password1" placeholder="请输入password"/><br>
+                                <input type="submit" value="提交" onclick="sql1()"/><br>
+                            </form>
+                            <div id="result1"></div>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sql1(){
+            //根据dom对象获取文本框的数据
+            var username = $("input[name='username1']").val();
+            var password = $("input[name='password1']").val()
+
+            $.ajax({
+                url:"/sql1",
+                type:"post",
+                data:{"username":username,"password":password},
+                success:function(data){
+                    $("#result1").text(data)
+                }
+            })
+        }
+    </script>
+
+    <!-- SQL Modal 2 -->
+    <div class="SQL-modal modal fade" id="SQLModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>SQL2 漏洞演示</h2>
+                            <p class="item-intro text-muted">payload</p>
+                            <p class="item-intro text-muted">-1%' union select 1,database(),3,4-- </p>
+                            <p class="item-intro text-muted">模糊搜索</p>
+                            <form>
+                                <input type="text" name="search" placeholder="模糊查询"/><br>
+                                <!--                                <input type="text" name="password1" placeholder="请输入password"/><br>-->
+                                <input type="submit" value="提交" onclick="sql2()"/><br>
+                            </form>
+                            <div id="result2"></div>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sql2(){
+            //根据dom对象获取文本框的数据
+            var search = $("input[name='search']").val();
+            // var password = $("input[name='password1']").val()
+
+            $.ajax({
+                url:"/sql2",
+                type:"post",
+                data:{"search":search},
+                success:function(data){
+                    $("#result2").text(data)
+                }
+            })
+        }
+    </script>
+
+    <!-- SQL Modal 3 -->
+    <div class="SQL-modal modal fade" id="SQLModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>SQL3 漏洞演示</h2>
+                            <p class="item-intro text-muted">payload</p>
+                            <p class="item-intro text-muted">1') -- </p>
+                            <p class="item-intro text-muted">查成绩</p>
+                            <form>
+                                <input type="text" name="username3" placeholder="请输入username"/><br>
+                                <input type="text" name="password3" placeholder="请输入password"/><br>
+                                <input type="submit" value="提交" onclick="sql3()"/><br>
+                            </form>
+                            <div id="result3"></div>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sql3(){
+            //根据dom对象获取文本框的数据
+            var username = $("input[name='username3']").val();
+            var password = $("input[name='password3']").val()
+
+            $.ajax({
+                url:"/sql3",
+                type:"post",
+                data:{"username":username,"password":password},
+                success:function(data){
+                    $("#result3").text(data)
+                }
+            })
+        }
+    </script>
+
+    <!-- SQL Modal 4 -->
+    <div class="SQL-modal modal fade" id="SQLModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>SQL4 漏洞演示</h2>
+                            <p class="item-intro text-muted">payload</p>
+                            <p class="item-intro text-muted">-1) union select 1,database(),3,4-- </p>
+                            <p class="item-intro text-muted">具体搜索</p>
+                            <form>
+                                <input type="text" name="username4" placeholder="具体查询"/><br>
+                                <!--                                                                <input type="text" name="password1" placeholder="请输入password"/><br>-->
+                                <input type="submit" value="提交" onclick="sql4()"/><br>
+                            </form>
+                            <div id="result4"></div>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sql4(){
+            //根据dom对象获取文本框的数据
+            var username = $("input[name='username4']").val();
+            // var password = $("input[name='password1']").val()
+
+            $.ajax({
+                url:"/sql4",
+                type:"post",
+                data:{"username":username},
+                success:function(data){
+                    $("#result4").text(data)
+                }
+            })
+        }
+    </script>
+
 </body>
 
 </html>
