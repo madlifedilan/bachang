@@ -4,10 +4,7 @@ package com.mxt.xss.controller;
 import com.mxt.xss.model.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class XssController {
@@ -17,12 +14,16 @@ public class XssController {
         return "index";
     }
 
-    @PostMapping ("/xssoutput")
+    @GetMapping("/xss1")
     @ResponseBody
-    public String outputmessage(@RequestParam("name") String name, Model model){
-        Person person = new Person(name);
-        model.addAttribute("myperson",person);
-        return name;
+    public String xss1(String xss){
+        return xss;
+    }
+
+    @PostMapping("/xss2")
+    @ResponseBody
+    public String xss2(String xss){
+        return xss;
     }
 
 }
