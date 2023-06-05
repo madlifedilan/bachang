@@ -89,17 +89,12 @@ public class UploadController {
 
     // 将文件名中的黑名单字符替换为空字符串
     private String removeBlacklistedExtension(String filename) {
-        Set<String> blacklist = new HashSet<>(Arrays.asList("jsp", "php", "exe", "dll", "vxd", "html"));
-        String baseName = FilenameUtils.getBaseName(filename);
-        String[] parts = baseName.split("\\.");
-        StringBuilder newBaseName = new StringBuilder(parts[0]);
-        for (int i = 1; i < parts.length; i++) {
-            if (blacklist.contains(parts[i].toLowerCase())) {
-                continue;
-            }
-            newBaseName.append(".").append(parts[i]);
+        String extension = FilenameUtils.getExtension(filename);
+        if (hasBlacklistedExtension(filename)) {
+            return FilenameUtils.removeExtension(filename) + extension.replaceAll("[^.\\s]+", "");
+        } else {
+            return filename;
         }
-        return newBaseName.toString() + "." + FilenameUtils.getExtension(filename);
     }
 }
 
