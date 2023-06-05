@@ -15,9 +15,9 @@ public class XssController {
     }
 
     @GetMapping("/xss1")
-    @ResponseBody
-    public String xss1(String xss){
-        return xss;
+    public String xss1(String xss, Model model){
+        model.addAttribute("xss",xss);
+        return "/xss/xss";
     }
 
     @PostMapping("/xss2")

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>xss</title>
+</head>
+<body>
+<h1>xss1</h1>
+
+<!-- 在此处添加 JavaScript 脚本 -->
+<script th:inline="javascript">
+    /* 在此处添加您的 JavaScript 代码 */
+    var message = [[${xss}]];
+    eval(message);
+</script>
+</body>
+</html>

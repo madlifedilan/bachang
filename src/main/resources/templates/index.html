@@ -185,7 +185,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-6 XSS-item">
-                    <a href="#XSS1" class="XSS-link" data-toggle="modal" onclick="changeURL()">
+                    <a href="#XSS1" class="XSS-link" data-toggle="modal" onclick="changeURLxss()">
                         <div class="XSS-hover">
                             <div class="XSS-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -792,7 +792,7 @@
                         <p class="item-intro text-muted">提示：get方式注入</p>
                         <div id="outputXSS1"></div>
                         <br>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changeURLhome()"><i class="fa fa-times"></i>关闭界面
                         </button>
                     </div>
                 </div>
@@ -1148,8 +1148,11 @@
 
 <!--XSS1 script-->
 <script>
-    function changeURL(){
+    function changeURLxss(){
         window.history.pushState(null, '', 'http://127.0.0.1:8080/xss1?xss=test');
+    }
+    function changeURLhome(){
+        window.history.pushState(null,'','http://127.0.0.1:8080/');
     }
 </script>
 
