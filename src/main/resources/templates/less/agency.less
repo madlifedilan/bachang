@@ -536,81 +536,6 @@ section {
 	}
 }
 
-// SSRF Section
-
-#SSRF {
-	.SSRF-item {
-		margin: 0 0 15px;
-		right: 0;
-		.SSRF-link {
-			display: block;
-			position: relative;
-			max-width: 400px;
-			margin: 0 auto;
-			.SSRF-hover {
-				background: fade(@brand-primary, 90%);
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				opacity: 0;
-				transition: all ease 0.5s;
-				-webkit-transition: all ease 0.5s;
-				-moz-transition: all ease 0.5s;
-				&:hover {
-					opacity: 1;
-				}
-				.SSRF-hover-content {
-					position: absolute;
-					width: 100%;
-					height: 20px;
-					font-size: 20px;
-					text-align: center;
-					top: 50%;
-					margin-top: -12px;
-					color: white;
-					i {
-						margin-top: -12px;
-					}
-					h3,
-					h4 {
-						margin: 0;
-					}
-				}
-			}
-		}
-		.SSRF-caption {
-			max-width: 400px;
-			margin: 0 auto;
-			background-color: white;
-			text-align: center;
-			padding: 25px;
-			h4 {
-				text-transform: none;
-				margin: 0;
-			}
-			p {
-				.serif-font;
-				font-style: italic;
-				font-size: 16px;
-				margin: 0;
-			}
-		}
-	}
-	* {
-		z-index: 2;
-	}
-}
-
-@media(min-width:767px) {
-	#SSRF {
-		.SSRF-item {
-			margin: 0 0 30px;
-		}
-	}
-}
-
-
-
 // portfolio Section
 
 #portfolio {
@@ -998,7 +923,7 @@ ul.social-buttons {
 	outline: none;
 }
 
-.SQL-modal .XSS-modal .RCE-modal.CSRF-modal .SSRF-modal .portfolio-modal {
+.SQL-modal .XSS-modal .RCE-modal .CSRF-modal .upload-modal .portfolio-modal {
 	.modal-content {
 	    border-radius: 0;
 	    background-clip: border-box;
