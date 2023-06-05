@@ -397,20 +397,20 @@
                     <p class="text-muted">初级</p>
                 </div>
             </div>
-<!--            <div class="col-md-4 col-sm-6 upload-item">-->
-<!--                <a href="#uploadModall4" class="upload-link" data-toggle="modal">-->
-<!--                    <div class="upload-hover">-->
-<!--                        <div class="upload-hover-content">-->
-<!--                            <i class="fa fa-plus fa-3x"></i>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">-->
-<!--                </a>-->
-<!--                <div class="upload-caption">-->
-<!--                    <h4>Golden</h4>-->
-<!--                    <p class="text-muted">Website Design</p>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="col-md-4 col-sm-6 upload-item">
+                <a href="#uploadModal4" class="upload-link" data-toggle="modal">
+                    <div class="upload-hover">
+                        <div class="upload-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/图标.jpg" class="img-responsive" alt="">
+                </a>
+                <div class="upload-caption">
+                    <h4>UPLOAD 4</h4>
+                    <p class="text-muted">中级</p>
+                </div>
+            </div>
 
 <!--            <div class="col-md-4 col-sm-6 upload-item">-->
 <!--                <a href="#uploadModal5" class="upload-link" data-toggle="modal">-->
@@ -1037,6 +1037,7 @@
         <input type="submit" onclick="uploadsubmit1()">
         <br>
         <div id="resultupload1"></div>
+        <div id="resultupload-filename1"></div>
         <br>
         <br>
         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
@@ -1053,6 +1054,7 @@
         <input type="submit" onclick="uploadsubmit2()">
         <br>
         <div id="resultupload2"></div>
+        <div id="resultupload-filename2"></div>
         <br>
         <br>
         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
@@ -1069,6 +1071,7 @@
         <input type="submit" onclick="uploadsubmit3()">
         <br>
         <div id="resultupload3"></div>
+        <div id="resultupload-filename3"></div>
         <br>
         <br>
         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
@@ -1085,6 +1088,7 @@
         <input type="submit" onclick="uploadsubmit4()">
         <br>
         <div id="resultupload4"></div>
+        <div id="resultupload-filename4"></div>
         <br>
         <br>
         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>关闭界面</button>
@@ -1611,6 +1615,8 @@
             dataType: 'json',
             success: function(data) {
                 $('#resultupload1').text('文件上传成功');
+                $("#resultupload-filename1").text('文件名为：' +
+                    data.filename);
             },
             error: function(xhr, status, error) {
                 $('#resultupload1').text('文件上传失败');
@@ -1641,6 +1647,8 @@
             success: function(data) {
                 if (data.status === 'success') {
                     $('#resultupload2').text('文件上传成功！');
+                    $("#resultupload-filename2").text('文件名为：' +
+                        data.filename);
                 }
             },
             error: function(xhr, status, error) {
@@ -1653,10 +1661,9 @@
 <script>
     function uploadsubmit3() {
         var fileData = $('#upload3').prop('files')[0];
-
         var allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.txt', '.pdf', '.doc', '.docx'];
         // 检查上传的文件类型
-        var fileExtension = fileData.name.split('.').pop();
+        var fileExtension = fileData.name.split('.').pop().toLowerCase();
         if (!allowedExtensions.includes('.' + fileExtension)) {
             $('#resultupload3').text('不允许上传 ".jsp", ".php", ".exe", ".dll", ".vxd", ".html" 结尾的文件！');
             return;
@@ -1674,6 +1681,8 @@
             success: function(data) {
                 if (data.status === 'success') {
                     $('#resultupload3').text('文件上传成功！');
+                    $("#resultupload-filename3").text('文件名为：' +
+                        data.filename);
                 }
             },
             error: function(xhr, status, error) {
@@ -1685,35 +1694,25 @@
 <!--upload4-->
 <script>
     function uploadsubmit4() {
-        var fileData = $('#upload4').prop('files')[0];
-
-        var allowedExtensions = ['.jsp', '.php', '.exe', '.dll', '.vxd', '.html'];
-        // 检查上传的文件类型
-        var fileExtension = fileData.name.split('.').pop().toLowerCase();
-        if (!allowedExtensions.includes('.' + fileExtension)) {
-            $('#resultupload4').text('不允许上传 ".jsp", ".php", ".exe", ".dll", ".vxd", ".html" 结尾的文件！');
-            return;
+    var formData = new FormData();
+    var fileInput = document.getElementById("upload4");
+    formData.append("file", fileInput.files[0]);
+    $.ajax({
+        url: "/upload4",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            $("#resultupload4").text("文件上传成功");
+            $("#resultupload-filename4").text("文件名为："+response.filename);
+        },
+        error: function(xhr, status, error) {
+            $("#resultupload4").text("上传失败：" + error);
         }
-        var formData = new FormData();
-        formData.append('file', fileData);
-        // 发送 Ajax 请求
-        $.ajax({
-            url: '/upload1',
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            dataType: 'json',
-            success: function(data) {
-                if (data.status === 'success') {
-                    $('#resultupload4').text('文件上传成功！');
-                }
-            },
-            error: function(xhr, status, error) {
-                $('#resultupload4').text('文件上传失败：' + error);
-            }
-        });
+    });
     }
+
 </script>
 </body>
 
