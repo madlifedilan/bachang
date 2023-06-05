@@ -10,6 +10,7 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
 import javax.script.Bindings;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -60,7 +61,7 @@ public class RCEcontroller {
             ProcessBuilder processBuilder = new ProcessBuilder(cmd);
             Process p = processBuilder.start();
             BufferedInputStream in = new BufferedInputStream(p.getInputStream());
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in,"GB2312"));
             String tmpStr;
 
             while ((tmpStr = reader.readLine()) != null) {
@@ -73,17 +74,33 @@ public class RCEcontroller {
         return sb.toString();
     }
 
-    @RequestMapping(value="/jscmd",method = RequestMethod.POST)
-    public void jsEngine(String command) throws Exception{
-        // js nashorn javascript ecmascript
-        ScriptEngine engine = new ScriptEngineManager().getEngineByName("js");
-        //ScriptEngine engine = manager.getEngineByName("JavaScript");//通过脚本名称获取：
-        //ScriptEngine engine = manager.getEngineByMimeType("text/javascript");  //通过MIME类型来获取：
-        Bindings bindings = engine.getBindings(ScriptContext.ENGINE_SCOPE);//启动javascript引擎
-        String cmd = String.format("load(\"%s\")", command);
-        engine.eval(cmd, bindings);
-    }
 
+    @RequestMapping(value="/commandinject",method = RequestMethod.POST)
+    public String codeInject(String command){
+        if (command == null || command.isEmpty()) {
+            command = "whoami";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        try {
+            String[] cmdList = new String[]{"cmd", "/c", "dir " + command};
+            ProcessBuilder builder = new ProcessBuilder(cmdList);
+            builder.redirectErrorStream(true);//将标准输入流和错误输入流合并，通过标准输入流读取信息
+            Process process = builder.start();//通过start方法启动前面输入的命令
+            BufferedInputStream in = new BufferedInputStream(process.getInputStream());
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in,"GB2312"));
+            String tmpStr;
+
+            while ((tmpStr = reader.readLine()) != null) {
+                sb.append(tmpStr);
+            }
+        } catch (Exception e) {
+            return e.toString();
+        }
+
+        return sb.toString();
+
+    }
 
 }
 

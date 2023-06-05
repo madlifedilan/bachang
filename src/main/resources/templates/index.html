@@ -282,6 +282,20 @@
                     <p class="text-muted">高级</p>
                 </div>
             </div>
+            <div class="col-md-4 col-sm-6 RCE-item">
+                <a href="#RCEModal4" class="RCE-link" data-toggle="modal">
+                    <div class="RCE-hover">
+                        <div class="RCE-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/图标.jpg" class="img-responsive" alt="">
+                </a>
+                <div class="RCE-caption">
+                    <h4>RCE-3</h4>
+                    <p class="text-muted">高级</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -970,7 +984,46 @@
         </div>
     </div>
 </div>
+<!-- RCE Modal 3 -->
+<div class="RCE-modal modal fade" id="RCEModal4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" onclick="refresh()" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <!-- Project Details Go Here -->
+                        <h2>RCE-3 漏洞演示</h2>
+                        <p class="item-intro text-muted">提示</p>
+                        <p class="item-intro text-muted">&&whoami </p>
+                        <p class="item-intro text-muted">whoami</p>
+                        <input type="text" name="command3" placeholder="请输入文件地址访问">
+                        <input type="submit" value="提交" onclick="commandinject()"/>
 
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <div id="RCEresult3"></div>
+
+                        <ul class="list-inline">
+                            <li>Date: June 2023</li>
+                            <li>Author: Wu yuchen</li>
+                            <li>Category: Graphic Design</li>
+                        </ul>
+                        <button onclick="refresh()" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>
+                            Close Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- upload-->
 <!--    upload1-->
@@ -1244,6 +1297,23 @@
             data: {"command": command},
             success: function (data) {
                 $("#RCEresult2").text(data);
+
+            }
+        })
+    }
+</script>
+<!-- RCE 的第三个靶场提交 -->
+<script>
+    function commandinject() {
+        //根据dom对象获取文本框的数据
+        var command = $("input[name='command3']").val();
+
+        $.ajax({
+            url: "/commandinject",
+            type: "post",
+            data: {"command": command},
+            success: function (data) {
+                $("#RCEresult3").text(data);
 
             }
         })
