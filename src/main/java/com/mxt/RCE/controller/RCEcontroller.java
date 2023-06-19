@@ -30,7 +30,7 @@ public class RCEcontroller {
         Process process;
         String result = "";
         try {
-            String[] cmd = {"cmd","/c",command};
+            String[] cmd = {"/bin/sh","-c",command};
             process = Runtime.getRuntime().exec(cmd);
             InputStream inputStream = process.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream,"GB2312"));
@@ -57,7 +57,7 @@ public class RCEcontroller {
 
         try {
             //String[] cmd = {"/bin/sh", "-c", command}; //linux
-            String[] cmd = {"cmd","/c",command};  //Windows
+            String[] cmd = {"/bin/sh","-c",command};  //Windows
             ProcessBuilder processBuilder = new ProcessBuilder(cmd);
             Process p = processBuilder.start();
             BufferedInputStream in = new BufferedInputStream(p.getInputStream());
@@ -83,7 +83,7 @@ public class RCEcontroller {
 
         StringBuilder sb = new StringBuilder();
         try {
-            String[] cmdList = new String[]{"cmd", "/c", "dir " + command};
+            String[] cmdList = new String[]{"/bin/sh", "-c", "ls " + command};
             ProcessBuilder builder = new ProcessBuilder(cmdList);
             builder.redirectErrorStream(true);//将标准输入流和错误输入流合并，通过标准输入流读取信息
             Process process = builder.start();//通过start方法启动前面输入的命令
