@@ -354,7 +354,7 @@
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-6 upload-item">
-                <a href="#uploadModal1" class="upload-link" data-toggle="modal">
+                <a href="#uploadModal1" class="upload-link" data-toggle="modal" onclick="resetUploadResults1()">
                     <div class="upload-hover">
                         <div class="upload-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
@@ -369,7 +369,7 @@
             </div>
 
             <div class="col-md-4 col-sm-6 upload-item">
-                <a href="#uploadModal2" class="upload-link" data-toggle="modal">
+                <a href="#uploadModal2" class="upload-link" data-toggle="modal" onclick="resetUploadResults2()">
                     <div class="upload-hover">
                         <div class="upload-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
@@ -384,7 +384,7 @@
             </div>
 
             <div class="col-md-4 col-sm-6 upload-item">
-                <a href="#uploadModal3" class="upload-link" data-toggle="modal">
+                <a href="#uploadModal3" class="upload-link" data-toggle="modal" onclick="resetUploadResults3()">
                     <div class="upload-hover">
                         <div class="upload-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
@@ -397,8 +397,9 @@
                     <p class="text-muted">初级</p>
                 </div>
             </div>
+
             <div class="col-md-4 col-sm-6 upload-item">
-                <a href="#uploadModal4" class="upload-link" data-toggle="modal">
+                <a href="#uploadModal4"  class="upload-link" data-toggle="modal" onclick="resetUploadResults4()">
                     <div class="upload-hover">
                         <div class="upload-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
@@ -1364,6 +1365,7 @@
                 </div>
             </div>
             <div class="container">
+        <!--flag1{TVhUU2VjdXJpdHkx}-->
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
@@ -1631,7 +1633,6 @@
 <script>
     function uploadsubmit2() {
         var fileData = $('#upload2').prop('files')[0];
-
         // 检查上传的文件类型
         if (fileData.type !== 'image/jpeg' && fileData.type !== 'image/png') {
             $('#resultupload2').text('只允许上传 JPG 和 PNG 格式的文件！');
@@ -1641,7 +1642,7 @@
         var formData = new FormData();
         formData.append('file', fileData);
         $.ajax({
-            url: '/upload1',
+            url: '/upload2',
             type: 'POST',
             data: formData,
             processData: false,
@@ -1689,6 +1690,7 @@
                 }
             },
             error: function(xhr, status, error) {
+                $('#resultupload3').load(window.location.href + ' #resultupload3');
                 $('#resultupload3').text('文件上传失败：' + error);
             }
         });
@@ -1716,6 +1718,26 @@
     });
     }
 
+    function resetUploadResults3() {
+        // 重置上传结果的 <div> 元素内容
+        document.getElementById("resultupload3").innerHTML = "";
+        document.getElementById("resultupload-filename3").innerHTML = "";
+    }
+    function resetUploadResults1() {
+        // 重置上传结果的 <div> 元素内容
+        document.getElementById("resultupload1").innerHTML = "";
+        document.getElementById("resultupload-filename1").innerHTML = "";
+    }
+    function resetUploadResults2() {
+        // 重置上传结果的 <div> 元素内容
+        document.getElementById("resultupload2").innerHTML = "";
+        document.getElementById("resultupload-filename2").innerHTML = "";
+    }
+    function resetUploadResults4() {
+        // 重置上传结果的 <div> 元素内容
+        document.getElementById("resultupload4").innerHTML = "";
+        document.getElementById("resultupload-filename4").innerHTML = "";
+    }
 </script>
 </body>
 
