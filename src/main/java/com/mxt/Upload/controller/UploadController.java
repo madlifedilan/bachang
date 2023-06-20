@@ -10,7 +10,7 @@ import java.util.*;
 
 @Controller
 public class UploadController {
-    String path="../usr/local/src/MXYupl0ad/";
+    String path="/usr/local/src/MXTupl0ad/";
 
     @RequestMapping(value = "/upload1", method=RequestMethod.POST)
     @ResponseBody

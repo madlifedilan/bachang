@@ -14,6 +14,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/templates/")
                 .addResourceLocations("classpath:/static/");
         registry.addResourceHandler("/MXTupl0ad/**")
-                .addResourceLocations("file:../usr/local/src/MXYupl0ad/");//本地路径
+                .addResourceLocations("file:/usr/local/src/MXTupl0ad/");//本地路径
     }
 }
