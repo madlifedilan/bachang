@@ -10,7 +10,7 @@ import java.util.*;
 
 @Controller
 public class UploadController {
-    String path="C:\\Users\\home\\Desktop\\bachang\\src\\main\\java\\com\\mxt\\Upload\\file";
+    String path="../usr/local/src/MXYupl0ad/";
 
     @RequestMapping(value = "/upload1", method=RequestMethod.POST)
     @ResponseBody
@@ -27,9 +27,9 @@ public class UploadController {
         Map<String ,String > result =new HashMap<>();
         result.put("status","success");
         result.put("filename", filename);
-        if (outfile.exists()) {
-            outfile.delete();
-        }
+//        if (outfile.exists()) {
+//            outfile.delete();
+//        }
         return result;
     }
 
@@ -47,9 +47,9 @@ public class UploadController {
         Map<String ,String > result =new HashMap<>();
         result.put("status","success");
         result.put("filename", filename);
-        if (outfile.exists()) {
-            outfile.delete();
-        }
+//        if (outfile.exists()) {
+//            outfile.delete();
+//        }
         return result;
     }
 
@@ -73,9 +73,9 @@ public class UploadController {
 
         result.put("status", "success");
         result.put("filename", filename);
-        if (outfile.exists()) {
-            outfile.delete();
-        }
+//        if (outfile.exists()) {
+//            outfile.delete();
+//        }
 
         return result;
     }
